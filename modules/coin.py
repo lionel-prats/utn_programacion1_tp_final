@@ -1,0 +1,15 @@
+import pygame 
+
+class Coin(pygame.sprite.Sprite):
+    def __init__(self, path_image, x, y, tile_size):
+        
+        pygame.sprite.Sprite.__init__(self)
+        
+        img = pygame.image.load(path_image)
+        
+        self.image = pygame.transform.scale(img, (tile_size//2, tile_size//2))
+        
+        self.rect = self.image.get_rect()
+        
+        self.rect.center = (x + tile_size // 2, 
+                            y + tile_size // 2)
